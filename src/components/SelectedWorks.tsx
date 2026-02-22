@@ -11,57 +11,57 @@ const projects = [
     category: 'Residential',
     description: 'A contemporary family home that embraces its sloping site with cascading living spaces and floor-to-ceiling glazing.',
     size: 'large',
-    gradient: 'from-[#2d3436] via-[#636e72] to-[#b2bec3]',
+    image: '/project-hawthorn.jpg',
   },
   {
     id: 2,
-    title: 'Coastal Pavilion',
-    location: 'Mornington Peninsula',
+    title: 'Kew Courtyard House',
+    location: 'Kew, Melbourne',
     year: '2024',
-    category: 'Holiday Home',
-    description: 'An off-grid sanctuary perched above the Bass Strait, celebrating indoor-outdoor living.',
+    category: 'Residential',
+    description: 'A stunning courtyard-centered home that brings natural light deep into the living spaces through thoughtful orientation.',
     size: 'medium',
-    gradient: 'from-[#1e272e] via-[#485460] to-[#808e9b]',
+    image: '/project-kew.jpg',
   },
   {
     id: 3,
-    title: 'Carlton Courtyard House',
-    location: 'Carlton, Melbourne',
+    title: 'Mornington Peninsula',
+    location: 'Mornington Peninsula',
     year: '2023',
-    category: 'Renovation',
-    description: 'A heritage terrace transformed through a central light court that breathes new life into narrow spaces.',
+    category: 'Holiday Home',
+    description: 'An off-grid sanctuary perched above the Bass Strait, celebrating indoor-outdoor living.',
     size: 'medium',
-    gradient: 'from-[#3d3d3d] via-[#5c5c5c] to-[#7a7a7a]',
+    image: '/project-mornington.jpg',
   },
   {
     id: 4,
-    title: 'Alpine Retreat',
-    location: 'Falls Creek',
+    title: 'Richmond Warehouse',
+    location: 'Richmond, Melbourne',
     year: '2023',
-    category: 'Holiday Home',
-    description: 'A snow-country sanctuary designed for both summer hiking and winter cocooning.',
+    category: 'Renovation',
+    description: 'A converted industrial warehouse transformed into a sophisticated residential space while preserving its character.',
     size: 'medium',
-    gradient: 'from-[#2c3e50] via-[#4ca1af] to-[#c4e0e5]',
+    image: '/project-richmond.png',
   },
   {
     id: 5,
-    title: 'Toorak Townhouse',
+    title: 'Toorak Residence',
     location: 'Toorak, Melbourne',
     year: '2023',
     category: 'Multi-residential',
     description: 'Three refined townhouses sharing a common garden, each with distinct personality.',
     size: 'large',
-    gradient: 'from-[#232526] via-[#414345] to-[#666666]',
+    image: '/project-toorak.png',
   },
   {
     id: 6,
-    title: 'Yarra Valley Vineyard House',
+    title: 'Yarra Valley Retreat',
     location: 'Yarra Valley',
     year: '2022',
     category: 'Residential',
     description: 'A winemaker\'s residence nestled among vines, with a cellar that celebrates the craft.',
     size: 'medium',
-    gradient: 'from-[#3e5151] via-[#decba4] to-[#f7f1e3]',
+    image: '/project-yarra.png',
   },
 ]
 
@@ -89,10 +89,16 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
       }`}
     >
       <motion.div
-        className={`relative w-full ${isLarge ? 'h-[500px] md:h-[700px]' : 'h-[350px] md:h-[400px]'} bg-gradient-to-br ${project.gradient}`}
+        className={`relative w-full ${isLarge ? 'h-[500px] md:h-[700px]' : 'h-[350px] md:h-[400px]'} overflow-hidden`}
         animate={{ scale: isHovered ? 1.05 : 1 }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       >
+        {/* Project image */}
+        <img
+          src={project.image}
+          alt={project.title}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
         {/* Overlay gradient */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-[#1a1a1a]/40 to-transparent" />
 

@@ -4,32 +4,32 @@ import { Linkedin, Mail } from 'lucide-react'
 
 const team = [
   {
-    name: 'Eleanor Whitmore',
+    name: 'Sarah Chen',
     role: 'Principal Architect',
-    bio: 'With over 20 years of experience across Melbourne and Copenhagen, Eleanor founded Studio Form with a vision to merge Scandinavian restraint with Australian openness.',
+    bio: 'With over 20 years of experience across Melbourne and Copenhagen, Sarah founded Studio Form with a vision to merge Scandinavian restraint with Australian openness.',
     credentials: 'BArch (Melb), MArch (Aarhus), RAIA',
-    gradient: 'from-[#2d3436] to-[#636e72]',
+    image: '/team-sarah.png',
   },
   {
-    name: 'Marcus Chen',
+    name: "Marcus O'Brien",
     role: 'Design Director',
     bio: 'Marcus brings a sculptor\'s sensibility to architecture, exploring the interplay of light, shadow, and material. His work has been recognized by the Australian Institute of Architects.',
     credentials: 'BArch (Melb), MArch (Harvard), RAIA',
-    gradient: 'from-[#1e272e] to-[#485460]',
+    image: '/team-marcus.png',
   },
   {
-    name: 'Sofia Andersson',
+    name: 'Yuki Tanaka',
     role: 'Senior Architect',
-    bio: 'Sofia specializes in sustainable design and passive house principles. Her technical expertise ensures every Studio Form project achieves exceptional environmental performance.',
-    credentials: 'BArch (Chalmers), Certified Passive House Designer',
-    gradient: 'from-[#3d3d3d] to-[#5c5c5c]',
+    bio: 'Yuki specializes in sustainable design and passive house principles. Her technical expertise ensures every Studio Form project achieves exceptional environmental performance.',
+    credentials: 'BArch (Tokyo), Certified Passive House Designer',
+    image: '/team-yuki.png',
   },
   {
-    name: 'James O\'Connor',
+    name: 'James Wright',
     role: 'Project Architect',
     bio: 'James leads project delivery with an unwavering commitment to craft. His background in fine woodworking informs his meticulous approach to detail and joinery.',
     credentials: 'BArch (RMIT), RAIA',
-    gradient: 'from-[#232526] to-[#414345]',
+    image: '/team-james.png',
   },
 ]
 
@@ -57,10 +57,18 @@ function TeamCard({ member, index }: { member: typeof team[0]; index: number }) 
         transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
         className="relative overflow-hidden"
       >
-        {/* Portrait placeholder */}
-        <div className={`relative h-[400px] lg:h-[450px] bg-gradient-to-br ${member.gradient} overflow-hidden`}>
+        {/* Portrait */}
+        <div className="relative h-[400px] lg:h-[450px] overflow-hidden bg-[#252525]">
+          {/* Team member image */}
+          <img
+            src={member.image}
+            alt={member.name}
+            className="absolute inset-0 w-full h-full object-cover object-top"
+          />
+          {/* Subtle gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a]/60 via-transparent to-transparent" />
           {/* Pattern overlay */}
-          <div className="absolute inset-0 opacity-10"
+          <div className="absolute inset-0 opacity-5"
             style={{
               backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(250,249,247,0.1) 35px, rgba(250,249,247,0.1) 70px)`,
             }}

@@ -24,23 +24,26 @@ export default function Hero() {
         style={{ scale }}
         className="absolute inset-0 z-0"
       >
-        {/* Architectural gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#252525] via-[#1a1a1a] to-[#1a1a1a]" />
+        {/* Hero architecture image */}
+        <div className="absolute inset-0">
+          <img
+            src="/hero-architecture.jpg"
+            alt="Modern architecture"
+            className="w-full h-full object-cover"
+          />
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-[#1a1a1a]/60" />
+          {/* Gradient overlay for depth */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-transparent to-[#1a1a1a]/30" />
+        </div>
         
-        {/* Geometric shapes representing architecture */}
+        {/* Subtle geometric accent */}
         <motion.div
           initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 0.6, x: 0 }}
+          animate={{ opacity: 0.3, x: 0 }}
           transition={{ duration: 1.5, delay: 0.5 }}
           style={{ y }}
-          className="absolute right-0 top-1/4 w-[60vw] h-[70vh] bg-gradient-to-bl from-[#c75b39]/20 to-transparent"
-        />
-        <motion.div
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 0.4, x: 0 }}
-          transition={{ duration: 1.5, delay: 0.7 }}
-          style={{ y }}
-          className="absolute left-0 bottom-0 w-[40vw] h-[50vh] bg-gradient-to-tr from-[#333]/50 to-transparent"
+          className="absolute right-0 top-1/4 w-[60vw] h-[70vh] bg-gradient-to-bl from-[#c75b39]/10 to-transparent"
         />
         
         {/* Grid lines suggesting architectural plans */}
